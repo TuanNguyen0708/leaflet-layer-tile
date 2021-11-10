@@ -10,7 +10,7 @@ import * as L from 'leaflet';
   styleUrls: ['./leaflet-handcode.component.css']
 })
 export class LeafletHandcodeComponent implements AfterViewInit {
-   map:any; 
+  map:any; 
   param:any = [];
   value:any
   tileMap: any={ };
@@ -46,9 +46,9 @@ export class LeafletHandcodeComponent implements AfterViewInit {
       maxNativeZoom: 20
     });
    
-    this.circleMap();
-    this.polygonMap();
-    this.polylineMap();
+    // this.circleMap();
+    // this.polygonMap();
+    // this.polylineMap();
   }
   
 
@@ -101,6 +101,7 @@ export class LeafletHandcodeComponent implements AfterViewInit {
     const checked = target.checked;
     if(checked){
       if(value == 4 ){
+        this.circleMap()
         this.map.addLayer(this.circle)
        } 
     }else{
@@ -110,6 +111,7 @@ export class LeafletHandcodeComponent implements AfterViewInit {
     }
     if(checked){
       if(value == 5 ){
+        this.polygonMap()
         this.map.addLayer(this.polygon)
        } 
     }else{
@@ -119,6 +121,7 @@ export class LeafletHandcodeComponent implements AfterViewInit {
     }
     if(checked){
       if(value == 6 ){
+        this.polylineMap()
         this.map.addLayer(this.polyline)
        } 
     }else{
